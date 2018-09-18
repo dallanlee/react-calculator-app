@@ -11,43 +11,35 @@ const doOperation = (firstNum, secondNum, operator) => {
   const second = new Big(secondNum)
 
   if (operator === "+") {
-    if (first.plus(second).gt(999999999) || first.plus(second).lt(-999999999)) {
-      return first
-        .plus(second)
-        .toExponential()
-        .toString()
+    const added = first.plus(second)
+    if (added.gt(999999999) || added.lt(-999999999)) {
+      return added.toExponential().toString()
     }
-    return first.plus(second).toString()
+    return added.toString()
   }
 
   if (operator === "-") {
-    if (first.minus(second).gt(999999999) || first.minus(second).lt(-999999999)) {
-      return first
-        .minus(second)
-        .toExponential()
-        .toString()
+    const subtracted = first.minus(second)
+    if (subtracted.gt(999999999) || subtracted.lt(-999999999)) {
+      return subtracted.toExponential().toString()
     }
-    return first.minus(second).toString()
+    return subtracted.toString()
   }
 
   if (operator === "×") {
-    if (first.times(second).gt(999999999) || first.times(second).lt(-999999999)) {
-      return first
-        .times(second)
-        .toExponential()
-        .toString()
+    const multiplied = first.times(second)
+    if (multiplied.gt(999999999) || multiplied.lt(-999999999)) {
+      return multiplied.toExponential().toString()
     }
-    return first.times(second).toString()
+    return multiplied.toString()
   }
 
   if (operator === "÷") {
-    if (first.div(second).gt(999999999) || first.div(second).lt(-999999999)) {
-      return first
-        .div(second)
-        .toExponential()
-        .toString()
+    const divided = first.div(second)
+    if (divided.gt(999999999) || divided.lt(-999999999)) {
+      return divided.toExponential().toString()
     }
-    return first.div(second).toString()
+    return divided.toString()
   }
 
   throw Error(`Unknown operator ${operator}`)
