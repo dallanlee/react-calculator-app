@@ -10,6 +10,18 @@ class Calculator extends Component {
     prev: null,
     operator: null,
     clearAll: true,
+    maxDigitsEntered: false,
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { maxDigitsEntered } = this.state
+    const nextDigitLength = this.state.next && this.state.next.replace(/\./g, "").length
+
+    if (maxDigitsEntered === false && nextDigitLength >= 9) {
+      this.setState({ maxDigitsEntered: true })
+    } else if (maxDigitsEntered === true && nextDigitLength < 9) {
+      this.setState({ maxDigitsEntered: false })
+    }
   }
 
   handleKeyClick = keyValue => {

@@ -52,6 +52,10 @@ export const calculate = (states, keyValue) => {
   }
 
   if (isNumber(keyValue)) {
+    if (states.maxDigitsEntered === true) {
+      return
+    }
+
     if (states.next === "0." || (states.next === null && states.total === "0.")) {
       return {
         next: "0." + keyValue,
