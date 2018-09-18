@@ -7,22 +7,46 @@ export const formatNumber = num => {
 }
 
 const doOperation = (firstNum, secondNum, operator) => {
-  const first = Big(firstNum)
-  const second = Big(secondNum)
+  const first = new Big(firstNum)
+  const second = new Big(secondNum)
 
   if (operator === "+") {
+    if (first.plus(second).gt(999999999) || first.plus(second).lt(-999999999)) {
+      return first
+        .plus(second)
+        .toExponential()
+        .toString()
+    }
     return first.plus(second).toString()
   }
 
   if (operator === "-") {
+    if (first.minus(second).gt(999999999) || first.minus(second).lt(-999999999)) {
+      return first
+        .minus(second)
+        .toExponential()
+        .toString()
+    }
     return first.minus(second).toString()
   }
 
   if (operator === "×") {
+    if (first.times(second).gt(999999999) || first.times(second).lt(-999999999)) {
+      return first
+        .times(second)
+        .toExponential()
+        .toString()
+    }
     return first.times(second).toString()
   }
 
   if (operator === "÷") {
+    if (first.div(second).gt(999999999) || first.div(second).lt(-999999999)) {
+      return first
+        .div(second)
+        .toExponential()
+        .toString()
+    }
     return first.div(second).toString()
   }
 
