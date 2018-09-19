@@ -43,11 +43,6 @@ body {
 
 .component--display {
   position: relative;
-  /* display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  min-height: 0;
-  min-width: 0; */
   overflow: hidden;
   font-weight: 200;
   font-size: 25.3807106599vw;
@@ -183,5 +178,11 @@ body {
   }
   .component--key.key--wide button {
     text-indent: 30px;
+  }
+}
+
+@media only screen and (orientation: portrait) and (max-width: 394px) {
+  body {
+    background-color: #0d0d0d;
   }
 }
