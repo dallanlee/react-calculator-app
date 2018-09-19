@@ -64,7 +64,9 @@ body {
   font-size: 8.6294416244vw;
   font-weight: 300;
 }
-
+.component--key {
+  touch-action: manipulation;
+}
 .component--key button {
   /* https://gist.github.com/MoOx/9137295 */
   border: none;
