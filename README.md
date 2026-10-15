@@ -1,3 +1,9 @@
+# Retired portfolio experiment
+
+Retired portfolio experiment. This project is no longer maintained or supported and is kept for historical reference.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
